@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUAhY1WgSFNsNPnYMkLmDT1YvNUCJwT5W16cmc3rHgpVj12vJ0_Q" alt="{{username}}" style="width:100%">
+        <h1>Username</h1>
+        <p class="title" style="color: grey;
+        font-size: 18px;">Company</p>
+        <p>Bio</p>
+        <div style=" text-decoration: none;
+        font-size: 22px;
+        color: black;">
+            <a href="#"><i class="fa fa-twitter"></i></a> 
+            <a href="#"><i class="fa fa-linkedin"></i></a> 
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+        </div>
+        <a><button style="border: none;outline: 0;display: inline-block;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;width: 100%;font-size: 18px;padding: 2%">Update details</button></a>
+        <a><button style="border: none;outline: 0;display: inline-block;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;width: 100%;font-size: 18px;padding: 2%">Update Profile Picture</button></a>
+        <a><button style="border: none;outline: 0;display: inline-block;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;width: 100%;font-size: 18px;margin: 2px solid white;">Upload new pitch</button></a>
+    </div>
+</body>
+
+{% endblock %}

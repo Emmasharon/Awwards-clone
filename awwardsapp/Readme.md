@@ -17,7 +17,7 @@ https://emmAwwards.herokuapp.com
 ## BDD
 | Behavior           | Input                 | Outcome                            |
 | -------------------|-----------------------| -----------------------------------|
-|request page       | click horuku link url | view images          |                    
+| request page       | click horuku link url | view images          |                    
 |sign up      | registration form  | login page         |
 |login        | login form  | timeline page         |
 |profile  | click on profile icon | view profile page  |
