@@ -22,7 +22,7 @@ https://emmAwwards.herokuapp.com
 |login        | login form  | timeline page         |
 |profile  | click on profile icon | view profile page  |
 |post  | click on upload icon | upload a project  |
-|view all posts | click on timeline page | user goes to page containing all posts|  
+|view all posts | click on timeline page |  user goes to page containing all posts|  
 
 ## Setup and installations
 
