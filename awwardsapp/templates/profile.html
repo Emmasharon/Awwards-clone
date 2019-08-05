@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    {% if user.is_authenticated %
     <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -24,6 +25,8 @@
         <a><button style="border: none;outline: 0;display: inline-block;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;width: 100%;font-size: 18px;padding: 2%">Update Profile Picture</button></a>
         <a><button style="border: none;outline: 0;display: inline-block;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;width: 100%;font-size: 18px;margin: 2px solid white;">Upload new pitch</button></a>
     </div>
+    {% else %}
+  {% endif %}
 </body>
 
 {% endblock %}
