@@ -39,8 +39,8 @@ def profile(request):
             profileform = ProfileForm()
             
         return render(request, 'profile.html',locals())
+    
 @login_required(login_url='/accounts/login')
-
 def post_project(request):
     if request.method == 'POST':
         projectform = ProjectForm(request.POST, request.FILES)
@@ -59,6 +59,24 @@ def post_project(request):
 
 @login_required(login_url='/accounts/login/')
 def new_post(request):
+    projects = Project.objects.all()
+    current_user = request.user
+    if request.method == 'POST':
+        projectform = ProjectForm(request.POST, request.FILES)
+        if projectform.is_valid():
+            project = projectform.save(commit=False)
+            project.profile = current_user.profile
+            project.save()
+            
+        return redirect('index')
+    
+    else:
+        projectform = ProjectForm()
+    
+    return render(request, 'new_post.html', locals())
+
+@login_required(login_url='/accounts/login/')
+def edit_profile(request):
     projects = Project.objects.all()
     current_user = request.user
     if request.method == 'POST':
