@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEoqu9c0EvyqDl5CABObhKxev1dXaYBEkPLg7YJAwfor-krx1I');background-repeat: no-repeat;background-size: cover; font-size: 20px;">
+    <div class="container" style="margin-top: 20%;">
+            <form  action="{%url 'new_post' %}" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                
+                    {% bootstrap_form projectform layout='inline'%}
+                    <input type="submit" class="btn-outline-info" value="New Post">
+            </form>
+    </div>
+</body>
+{% endblock %}
