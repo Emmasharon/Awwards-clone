@@ -55,6 +55,24 @@ def post_project(request):
         projectform = ProjectForm()
         return render(request,'update-project.html',locals())
 
-def view_project(request):
-    project = Project.objects.get_all()
-    return render(request,'index.html', locals())
+# def view_project(request):
+#     project = Project.objects.get_all()
+#     return render(request,'index.html', locals())
+
+@login_required(login_url='/accounts/login/')
+def new_post(request):
+    projects = Project.objects.all()
+    current_user = request.user
+    if request.method == 'POST':
+        postform = PostForm(request.POST, request.FILES)
+        if projectform.is_valid():
+            project = projectform.save(commit=False)
+            project.profile = current_user.profile
+            project.save()
+            
+        return redirect('index')
+    
+    else:
+        projectform = ProjectForm()
+    
+    return render(request, 'new_post.html', locals())
