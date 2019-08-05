@@ -11,6 +11,16 @@ from django.db.models import F
 def index(request):
     return render(request, 'index.html')
 
+def convert_dates(dates):
+    day_number = dt.date.weekday(dates)
+
+    days = ['Monday','Tuesday','Wednesday','thursday','Friday','Saturday','Sunday']
+    '''
+    Returns the actual day of the week
+    '''
+    day = days[day_number]
+    return day
+
 @login_required(login_url='/accounts/login/')
 def profile(request):
     def profile(request):
@@ -28,4 +38,20 @@ def profile(request):
             profileform = ProfileForm()
             
         return render(request, 'profile.html',locals())
-       
+@login_required(login_url='/accounts/login')
+
+def post_project(request):
+    if request.method == 'POST':
+        projectform = ProjectForm(request.POST, request.FILES)
+        if projectform.is_valid():
+            post = projectform.save(commit=False)
+            post.profile = request.user.profile
+            post.save()
+            return redirect('index.html')
+    else:
+projectform = ProjectForm()
+    return render(request,'update-project.html',locals())
+
+def view_project(request):
+    project = Project.objects.get_all()
+    return render(request,'home.html', locals())
