@@ -49,7 +49,7 @@ def post_project(request):
             post.save()
             return redirect('index.html')
     else:
-projectform = ProjectForm()
+    projectform = ProjectForm()
     return render(request,'update-project.html',locals())
 
 def view_project(request):
