@@ -49,8 +49,8 @@ def post_project(request):
             post.save()
             return redirect('index.html')
     else:
-    projectform = ProjectForm()
-    return render(request,'update-project.html',locals())
+        projectform = ProjectForm()
+        return render(request,'update-project.html',locals())
 
 def view_project(request):
     project = Project.objects.get_all()
