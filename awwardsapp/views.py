@@ -6,10 +6,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import F
+import datetime as dt
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    date = dt.date.today()
+    project = Project.objects.all()
+    return render(request, 'index.html',locals())
 
 def convert_dates(dates):
     day_number = dt.date.weekday(dates)
