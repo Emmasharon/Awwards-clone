@@ -20,15 +20,15 @@
                 <div class="card col-md-4" style="width: 18rem;">
                     <img class="card-img-top" src="{{project.pic.url}}" alt="Post image">
                     <div class="card-body">
-                        <h5 class="card-title">Project name</h5>
-                        <p class="card-text">Description or caption of project</p>
+                        <h5 class="card-title">Project name: {{project.title}}</h5>
+                        <p class="card-text">Description: {{project.description}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">date posted</li>
-                        <li class="list-group-item">Votes overall score</li>
+                        <li class="list-group-item">date posted: {{project.pub_date}}</li>
+                        <li class="list-group-item">Votes: {{votes.average}} </li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Project link</a>
+                        <a href="{{project.link}}" class="card-link">Project link</a>
                     </div>
                 </div>
             </div>
