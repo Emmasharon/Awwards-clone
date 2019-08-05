@@ -54,4 +54,4 @@ projectform = ProjectForm()
 
 def view_project(request):
     project = Project.objects.get_all()
-    return render(request,'home.html', locals())
+    return render(request,'index.html', locals())
