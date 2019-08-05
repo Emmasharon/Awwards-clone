@@ -7,31 +7,31 @@
     width: 100vw;
     background-attachment: fixed; background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.726);">
 
-        <div class="text-center" style="height: 40vh; margin-top: 25vh;color: white;background-color: ">
+        <div class="text-center" style="height: 40vh; margin-top: 25vh;color: white;">
             <h1>Welcome to Awwards<h1>
         </div>
-        <div class="card text-center " style="font-size: 30px; margin-top: 20%;height:60vh;padding: 5%; margin: 10%;background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));">
+        <div class=" text-center ">
             <a href="/accounts/login">login</a>
             <p>otherwise <a href="/accounts/register">signup</a></p>
         </div>
         
+        {% for project in projects %}
         <div class="row">
-            <div class="card col-md-4" style="width: 18rem;">
-                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2K9iGJo_DwOasOpDpxPfWZqsQIyszViPhMeK3pXJ_AJ8vnzw3" alt="Post image">
-                <div class="card-body">
-                    <h5 class="card-title">Project name</h5>
-                    <p class="card-text">Description or caption of project</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">date posted</li>
-                    <li class="list-group-item">Votes overall score</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Project link</a>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <img class="card-img-top" src="{{project.pic.url}}" alt="Post image">
+                    <div class="card-body">
+                        <h5 class="card-title">Project name</h5>
+                        <p class="card-text">Description or caption of project</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">date posted</li>
+                        <li class="list-group-item">Votes overall score</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Project link</a>
+                    </div>
                 </div>
             </div>
-        </div>
-            
 
     </body>
 
