@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404,HttpResponseRedirect
-from .models import Profile,Project
-# from .forms import ProfileForm,PostForm, CommentForm
+from .models import Profile,Project,Votes
+from .forms import ProfileForm,ProjectForm, VoteForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
