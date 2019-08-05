@@ -18,7 +18,7 @@ class Project(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
     user= models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     
-        class Meta:
+    class Meta:
         ordering = ['-pk']
 
     def save_project(self):
