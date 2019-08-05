@@ -3,12 +3,12 @@ from django import forms
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        exclude = ['user', 'pub_date', 'profile']
+        exclude = ['user','profile']
 
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user','vote']
+        exclude = ['vote']
 
 class VoteForm(forms.ModelForm):
     class Meta:
