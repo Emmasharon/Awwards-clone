@@ -26,16 +26,14 @@ def convert_dates(dates):
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
-    def profile(request):
         current_user = request.user
         if request.method == 'POST':
             profileform = ProfileForm(request.POST, request.FILES)
             if profileform.is_valid():
                 profile = profileform.save(commit=False)
                 profile.user = current_user
-                profile.save()
-                
-            return redirect('profile')
+                profile.save() 
+                return redirect('profile')
 
         else:
             profileform = ProfileForm()
@@ -53,7 +51,7 @@ def post_project(request):
             return redirect('index.html')
     else:
         projectform = ProjectForm()
-        return render(request,'update-project.html',locals())
+    return render(request,'new_post.html',locals())
 
 # def view_project(request):
 #     project = Project.objects.get_all()
@@ -64,7 +62,7 @@ def new_post(request):
     projects = Project.objects.all()
     current_user = request.user
     if request.method == 'POST':
-        postform = PostForm(request.POST, request.FILES)
+        projectform = ProjectForm(request.POST, request.FILES)
         if projectform.is_valid():
             project = projectform.save(commit=False)
             project.profile = current_user.profile
