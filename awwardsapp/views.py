@@ -11,7 +11,7 @@ import datetime as dt
 # Create your views here.
 def index(request):
     date = dt.date.today()
-    project = Project.objects.all()
+    projects = Project.objects.all()
     return render(request, 'index.html',locals())
 
     if request.method=='POST' and 'post' in request.POST:
