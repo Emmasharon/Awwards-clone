@@ -14,6 +14,17 @@ def index(request):
     project = Project.objects.all()
     return render(request, 'index.html',locals())
 
+    if request.method=='POST' and 'post' in request.POST:
+        posted=request.POST.get("project")
+        for post in posts:
+            if (int(project.id)==int(posted)):
+                project.like+=1
+                project.save()
+        return redirect('index')
+        print (projects)
+    else:
+        return render(request, 'index.html',locals())
+
 def convert_dates(dates):
     day_number = dt.date.weekday(dates)
 
@@ -40,22 +51,6 @@ def profile(request):
             
         return render(request, 'profile.html',locals())
     
-@login_required(login_url='/accounts/login')
-def post_project(request):
-    if request.method == 'POST':
-        projectform = ProjectForm(request.POST, request.FILES)
-        if projectform.is_valid():
-            post = projectform.save(commit=False)
-            post.profile = request.user.profile
-            post.save()
-            return redirect('index.html')
-    else:
-        projectform = ProjectForm()
-    return render(request,'new_post.html',locals())
-
-# def view_project(request):
-#     project = Project.objects.get_all()
-#     return render(request,'index.html', locals())
 
 @login_required(login_url='/accounts/login/')
 def new_post(request):
