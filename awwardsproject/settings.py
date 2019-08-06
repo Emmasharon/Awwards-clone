@@ -66,8 +66,7 @@ SECRET_KEY = 'co2k*(r-r5x+ti@1(zp4=%+o4g@ezn)m$#w_o28ey^c_%$+l5@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())O
 
 # Application definition
 
