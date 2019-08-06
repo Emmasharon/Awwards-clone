@@ -2,23 +2,25 @@
 {% block content %}
 
 
-    <body style="background-image: url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');background-size: cover;
+<body style="background-image: url('https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');background-size: cover;
     height: auto;
     width: 100vw;
     background-attachment: fixed; background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.726);">
 
-        <div class="text-center" style="height: 40vh; margin-top: 25vh;color: white;">
-            <h1>Welcome to Awwards<h1>
-        </div>
-        <div class=" text-center ">
-            <a href="/accounts/login">login</a>
-            <p>otherwise <a href="/accounts/register">signup</a></p>
-        </div>
-        
-        {% for project in projects %}
+    <div class="text-center" style="height: 40vh; margin-top: 25vh;color: white;">
+        <h1>Welcome to Awwards<h1>
+    </div>
+    <div class=" text-center ">
+        <a href="/accounts/login">login</a>
+        <p>otherwise <a href="/accounts/register">signup</a></p>
+    </div>
+
+    <div class="container">
         <div class="row">
-                <div class="card col-md-4" style="width: 18rem;">
-                    <img class="card-img-top" src="{{project.pic.url}}" alt="Post image">
+            {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; height: 30rem; margin-top: 2%">
+                    <img style="height: 10rem" class="card-img-top" src="{{project.pic.url}}" alt="Post image">
                     <div class="card-body">
                         <h5 class="card-title">Project name: {{project.title}}</h5>
                         <p class="card-text">Description: {{project.description}}</p>
@@ -32,7 +34,10 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </body>
+            {% endfor %}
+
+        </div>
+    </div>
+</body>
 
 {% endblock%}
